@@ -7,4 +7,5 @@ redis==5.0.1
 python-dotenv==1.0.0
 pytz==2023.3
 email-validator==2.1.0
-
+celery==5.5.3
+psycopg2==2.9.11
