@@ -35,6 +35,6 @@ async def classify_func(data: EmailData, session: AsyncSession = Depends(get_db_
     await session.commit()
     await session.flush()
 
-    await create_classify_email_task(application_data={"email_id": email.id})
+    create_classify_email_task(application_data={"email_id": email.id})
 
     return JSONResponse(status_code=200, content={'message': 'Success'})
