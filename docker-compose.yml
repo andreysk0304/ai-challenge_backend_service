@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  api:
+    build: .
+    container_name: aviohack_backend_api
+    network_mode: host
+    environment:
+      - DATABASE_URL=${DATABASE_URL:-postgresql+asyncpg://admin:admin@localhost:5432/mydb}
+      - REDIS_URL=${REDIS_URL:-redis://localhost:6379/0}
+      - ALLOWED_ORIGINS=${ALLOWED_ORIGINS:-*}
+    env_file:
+      - .env
+    volumes:
+      - .:/app
+    restart: unless-stopped
+
