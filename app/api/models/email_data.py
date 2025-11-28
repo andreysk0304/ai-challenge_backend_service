@@ -5,7 +5,6 @@ from pydantic import BaseModel, Field
 
 
 class EmailData(BaseModel):
-
     message_id: str
     thread_id: Optional[str] = None
 

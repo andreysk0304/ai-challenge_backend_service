@@ -28,5 +28,5 @@ class Emails(Base):
     deadline_time: Mapped[datetime] = mapped_column(DateTime(), nullable=True)
 
     formality: Mapped[str] = mapped_column(String(128), nullable=True)
-    created_at: Mapped[datetime] = mapped_column(DateTime(), default=msk_now)
-    updated_at: Mapped[datetime] = mapped_column(DateTime(), default=msk_now())
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=msk_now)
+    updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=msk_now)
