@@ -1,9 +1,7 @@
-from pydantic import BaseModel, field_validator
-
 from datetime import datetime
 from typing import Optional
 
-from pydantic import BaseModel, EmailStr, Field
+from pydantic import BaseModel, Field
 
 
 class EmailData(BaseModel):
@@ -11,8 +9,8 @@ class EmailData(BaseModel):
     message_id: str
     thread_id: Optional[str] = None
 
-    from_email: EmailStr
-    to_email: Optional[EmailStr] = None
+    from_email: Optional[str]
+    to_email: Optional[str] = None
 
     subject: Optional[str] = None
     raw_body: Optional[str] = None
